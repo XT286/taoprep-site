@@ -1,218 +1,334 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Science & Machine Learning Interview Coaching</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaoPrep Education</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: url('./IMG_9808.heic') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
+      color: #000;
+      background-color: #fff;
     }
 
-    body::before {
-      content: '';
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .cta-button {
+      background: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      position: relative;
+      background-image: url('hero_background.png');
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      background-blend-mode: overlay;
-      filter: blur(10px);
-      opacity: 0.4;
-      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.1); /* Adjust transparency here */
+      z-index: 0;
     }
 
-    header {
-      text-align: center;
-      background: #003366;
-      color: white;
-      padding: 30px 20px;
-      border-bottom: 2px solid #00509E;
+    .hero h2 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.8em;
+      max-width: 90%;
+      line-height: 1.4;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      letter-spacing: 1px;
+    .booking-section {
+      padding: 60px 40px;
     }
 
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
+    .booking-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .flex-container {
+    .booking-blocks {
       display: flex;
-      gap: 20px;
-    }
-
-    .flex-container > .section {
-      flex: 1;
-      padding: 20px;
-      background: rgba(245, 245, 245, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #003366;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    p {
-      font-size: 1em;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    .services ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
+      gap: 30px;
       flex-wrap: wrap;
-      gap: 15px;
-      margin: 0;
     }
 
-    .services ul li {
-      background: #f4f4f4;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 10px 20px;
-      flex: 1 1 calc(50% - 15px);
-      text-align: center;
-      font-size: 1em;
+    .block {
+      flex: 1;
+      min-width: 300px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .btn {
+    .block img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .block h3 {
+      margin-top: 0;
+    }
+
+    .cta-button-small {
       display: inline-block;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      background: #003366;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: black;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      text-align: center;
-      margin-top: 20px;
     }
 
-    .btn:hover {
-      background: #002244;
+    .learning-center {
+      padding: 60px 40px;
+    }
+
+    .learning-center h2 {
+      font-size: 2.2em;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .materials {
+      display: none;
+    }
+
+    .materials.active {
+      display: block;
+    }
+
+    .material-item {
+      background: #f2f2f2;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .about-section {
+      display: flex;
+      align-items: center;
+      padding: 60px 40px;
+      gap: 40px;
+    }
+
+    .about-section img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    .about-text h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .about-text p {
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .self-learning-banner {
+      position: relative;
+      background-image: url('selflearningcentersession.png');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      text-align: center;
+      color: black;
+    }
+
+    .self-learning-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.6); /* Adjust transparency here */
+      z-index: 0;
+    }
+
+    .self-learning-banner h2,
+    .self-learning-banner p,
+    .self-learning-banner label,
+    .self-learning-banner select,
+    .self-learning-banner .materials {
+      position: relative;
+      z-index: 1;
     }
 
     footer {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
+      background-color: #f7f7f7;
+      color: #333;
       text-align: center;
-      padding: 20px 10px;
+      padding: 40px 20px;
       font-size: 0.9em;
-      margin-top: 20px;
+      border-top: 1px solid #ddd;
     }
 
     footer a {
-      color: #00509E;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: #00509E;
+      color: #333;
       text-decoration: underline;
     }
-
   </style>
 </head>
 <body>
-
   <header>
-    <h1><a href="/" style="color: white; text-decoration: none;">TaoPrep Education</a></h1>
-    <h3>Master Data Science and Machine Learning Interviews with Expert Guidance</h3>
+    <h1>TaoPrep Education</h1>
+    <nav>
+      <a href="#book">Services</a>
+      <a href="#downloads">Self-Learning Center</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="cta-button" href="#book">BOOK NOW</a>
   </header>
 
-  <div class="container">
-    <div class="flex-container">
-      <div class="section about">
-        <h2>Your mentor </h2> 
-        <h3><a href="https://www.linkedin.com/in/xuntao-hu/" target="_blank">Xuntao Hu</a></h3>
-        <p>- Current machine learning engineer at <strong>Attentive</strong>. </p>
-        <p>- Previous data scientist at <strong>Meta</strong> and <strong>Doordash</strong>. </p>
-        <p>I have been in the interview loops for all the companies I worked at.</p>
-        <p>As a coach,I've helped students and professionals land roles at top tech companies through customized interview prep.</p>
-        <h4>⭐⭐⭐⭐⭐ at <a href="https://prepfully.com/coaches/kopwvb" target="_blank">Prepfully</a>    (96% Re-book rate)</h4>
-        <style>
-          .quote-box {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-left: 4px solid #003366;
-            border-radius: 0px;
-            margin: 20px 0;
-            padding: 10px 15px;
-            position: relative;
-          }
+  <section class="hero">
+    <h2>Build your future AI career with us</h2>
+  </section>
 
-          .quote-box:before {
-            content: '"';
-            font-size: 45px;
-            color: #003366;
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            opacity: 0.3;
-            font-family: Georgia, serif;
-          }
-
-          .quote-box p {
-            margin: 0;
-            padding-left: 25px;
-            font-style: italic;
-            color: #444;
-            line-height: 1.6;
-          }
-        </style>
-        <div class="quote-box">
-          <p>Thank you for the actionable advice, will continue to practice and hopefully get over the hump.</p>
-        </div>
-        <div class="quote-box">
-          <p>The questions asked gave a good idea of what could be expected in the interview and how to prepare best. The questions were relevant and built on top of each other in terms of difficulty. It was a real test of my preparation so far.</p>
-        </div>
+  <section class="booking-section" id="book">
+    <h2>Exclusive Services</h2>
+    <div class="booking-blocks">
+      <div class="block">
+        <img src="datascience.png" alt="Data Science Interview">
+        <h3>Data Scientist Mock Interviews</h3>
+        <p>1-hour coaching session focused on product sense, statistics, SQL, and behavioral interview preparation.<br>
+        <strong>$190 / hour – billed after service</strong></p>
+        <a class="cta-button-small" href="https://calendar.app.google/Gkg279cHz5VUHWn19" target="_blank">Book Now</a>
       </div>
-      <div class="section services">
-        <h2>Services and Pricing</h2>
-        <ul>
-          <li>Product Sense and Case Studies</li>
-          <li>Probabilities and Statistics</li>
-          <li>Machine Learning Deep Dives</li>
-          <li>SQL Coding</li>
-        </ul>
-        <br>
-        <p><strong>$180/hour</strong> when booking directly from my calendar</p>
-        <a href="https://calendar.app.google/Gkg279cHz5VUHWn19" class="btn"  target="_blank">Book Directly from my Calendar</a>
-        <a href="https://prepfully.com/coaches/kopwvb" class="btn"  target="_blank">Book from Prepfully</a>
+      <div class="block">
+        <img src="machinelearning.png" alt="Machine Learning Interview">
+        <h3>Machine Learning Engineer Mock Interviews</h3>
+        <p>1-hour session with deep dives into ML theory, system design, coding questions, and deployment discussions.<br>
+        <strong>$190 / hour – billed after service</strong></p>
+        <a class="cta-button-small" href="https://calendar.app.google/Gkg279cHz5VUHWn19" target="_blank">Book Now</a>
+      </div>
+      <div class="block">
+        <img src="selflearningcenter.png" alt="Self-Learning Center">
+        <h3>Self-Learning Center</h3>
+        <p>Access our most up-to-date downloadable guides with close-to-reality answers to real interview questions.<br>
+        <strong>Starting at $50</strong> — a more affordable option to get ahead.</p>
+        <a class="cta-button-small" href="#downloads">Browse Materials</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="self-learning-banner" id="downloads">
+    <h2>Explore Our Self-Learning Center</h2>
+    <p style="font-size: 1.2em; max-width: 600px; margin: auto;">
+      Download affordable, realistic materials with answers to real interview questions. Curated for roles at top companies.
+    </p>
+    <label for="companySelect">Select a company:</label>
+    <select id="companySelect">
+      <option value="">--Choose--</option>
+      <option value="meta">Meta</option>
+      <option value="doordash">DoorDash</option>
+    </select>
+
+    <div id="meta" class="materials">
+      <div class="material-item">
+        <span>Meta DS Interview Guide (Coming Soon)</span>
+        <span>TBD <a href="#" class="cta-button-small">Coming Soon</a></span>
+      </div>
+      <div class="material-item">
+        <span>Meta ML Interview Pack (Coming Soon)</span>
+        <span>TBD <a href="#" class="cta-button-small">Coming Soon</a></span>
       </div>
     </div>
 
+    <div id="doordash" class="materials">
+      <div class="material-item">
+        <span>DoorDash DS Case Study Guide (Set One)</span>
+        <span>$75.00 <a href="https://taopreptechinterview.lemonsqueezy.com/buy/5784f654-f813-4ec2-a91b-a2a837438a47" class="cta-button-small" target="_blank">Download</a></span>
+      </div>
+      <div class="material-item">
+        <span>DoorDash DS Case Study Guide (Set Two)</span>
+        <span>$75.00 <a href="https://taopreptechinterview.lemonsqueezy.com/buy/9d0f2fd4-e487-49e9-97ef-a40972fc8cc2" class="cta-button-small" target="_blank">Download</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about" style="flex-wrap: wrap;">
+    <img src="headshot_xt.jpg" alt="Xuntao Hu, TaoPrep Founder" style="max-width: 300px; width: 100%; height: auto; flex-shrink: 0; border-radius: 10px;">
+    <div class="about-text">
+      <h2>Meet the Coach Behind TaoPrep</h2>
+      <p><strong><a href="https://www.linkedin.com/in/xuntao-hu/" target="_blank">Xuntao Hu</a></strong> is a seasoned machine learning engineer at <strong>Attentive</strong>, and formerly a data scientist at <strong>Meta</strong> and <strong>DoorDash</strong>. With firsthand experience across top tech companies, Xuntao has mastered what it takes to succeed in competitive interviews.</p>
+      <p>As the founder of TaoPrep, he has coached hundreds of candidates to land roles at top-tier firms like Google, Meta, DoorDash, and startups. His approach is pragmatic, realistic, and always tailored to each candidate’s unique background.</p>
+      <p><strong>⭐ 5-star rated</strong> on <a href="https://prepfully.com/coaches/kopwvb" target="_blank">Prepfully</a>.</p> 
+      <p>If you’re serious about your next step in data science or ML, you’ve found the right place.</p>
+      
+    </div>
+  </section>
+
   <footer>
-    Contact: <a href="mailto:xuntaohu.work@gmail.com">xuntaohu.work@gmail.com</a> | 
-    <a href="https://www.linkedin.com/in/xuntao-hu/" target="_blank">LinkedIn</a>
+    <p>
+      © 2025 TaoPrep Education | Designed with care |
+      <a href="mailto:xuntaohu.work@gmail.com">xuntaohu.work@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/xuntao-hu/" target="_blank">LinkedIn</a>
+    </p>
   </footer>
 
+  <script>
+    const select = document.getElementById('companySelect');
+    const sections = document.querySelectorAll('.materials');
+    select.addEventListener('change', () => {
+      sections.forEach(s => s.classList.remove('active'));
+      const selected = document.getElementById(select.value);
+      if (selected) selected.classList.add('active');
+    });
+  </script>
 </body>
 </html>
