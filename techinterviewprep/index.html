@@ -208,6 +208,47 @@
       position: relative;
       z-index: 1;
     }
+    .material-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      background: #f2f2f2;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .material-description {
+      flex: 2;
+      text-align: left;
+    }
+
+    .material-title {
+      margin: 0;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .material-subtitle {
+      margin: 3px 0 0;
+      font-size: 0.85em;
+      color: #555;
+    }
+
+    .material-action {
+      flex: 1;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .material-action span {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
     footer {
       background-color: #f7f7f7;
@@ -245,22 +286,22 @@
       <div class="block">
         <img src="datascience.png" alt="Data Science Interview">
         <h3>Data Scientist Mock Interviews</h3>
-        <p>1-hour coaching session focused on product sense, statistics, SQL, and behavioral interview preparation.<br>
+        <p>1-hour coaching session focused on product sense, statistics, SQL, and behavioral interview preparation.<br><br>
         <strong>$190 / hour – billed after service</strong></p>
         <a class="cta-button-small" href="https://calendar.app.google/Gkg279cHz5VUHWn19" target="_blank">Book Now</a>
       </div>
       <div class="block">
         <img src="machinelearning.png" alt="Machine Learning Interview">
         <h3>Machine Learning Engineer Mock Interviews</h3>
-        <p>1-hour session with deep dives into ML theory, system design, coding questions, and deployment discussions.<br>
+        <p>1-hour session with deep dives into ML theory, system design, coding questions, and deployment discussions.<br><br>
         <strong>$190 / hour – billed after service</strong></p>
         <a class="cta-button-small" href="https://calendar.app.google/Gkg279cHz5VUHWn19" target="_blank">Book Now</a>
       </div>
       <div class="block">
         <img src="selflearningcenter.png" alt="Self-Learning Center">
         <h3>Self-Learning Center</h3>
-        <p>Access our most up-to-date downloadable guides with close-to-reality answers to real interview questions.<br>
-        <strong>Starting at $50</strong> — a more affordable option to get ahead.</p>
+        <p>Access our most up-to-date downloadable guides with close-to-reality answers to real interview questions.<br><br>
+        <strong>Starting at $60</strong> — a more affordable option to get ahead.</p>
         <a class="cta-button-small" href="#downloads">Browse Materials</a>
       </div>
     </div>
@@ -291,14 +332,27 @@
 
     <div id="doordash" class="materials">
       <div class="material-item">
-        <span>DoorDash DS Case Study Guide (Set One)</span>
-        <span>$75.00 <a href="https://taopreptechinterview.lemonsqueezy.com/buy/5784f654-f813-4ec2-a91b-a2a837438a47" class="cta-button-small" target="_blank">Download</a></span>
+        <div class="material-description">
+          <p class="material-title">DoorDash DS Case Study Guide (Set One)</p>
+          <p class="material-subtitle">Including Answer Framework, Tips, and 5 Case Study Questions and Answers from Real Interviews</p>
+        </div>
+        <div class="material-action">
+          <span>$60.00</span>
+          <a href="https://taopreptechinterview.lemonsqueezy.com/buy/5784f654-f813-4ec2-a91b-a2a837438a47" class="cta-button-small" target="_blank">Download</a>
+        </div>
       </div>
       <div class="material-item">
-        <span>DoorDash DS Case Study Guide (Set Two)</span>
-        <span>$75.00 <a href="https://taopreptechinterview.lemonsqueezy.com/buy/9d0f2fd4-e487-49e9-97ef-a40972fc8cc2" class="cta-button-small" target="_blank">Download</a></span>
+        <div class="material-description">
+          <p class="material-title">DoorDash DS Case Study Guide (Set Two)</p>
+          <p class="material-subtitle">Including Answer Framework, Tips, and 5 Case Study Questions and Answers from Real Interviews</p>
+        </div>
+        <div class="material-action">
+          <span>$60.00</span>
+          <a href="https://taopreptechinterview.lemonsqueezy.com/buy/9d0f2fd4-e487-49e9-97ef-a40972fc8cc2" class="cta-button-small" target="_blank">Download</a>
+        </div>
       </div>
     </div>
+
   </section>
 
   <section class="about-section" id="about" style="flex-wrap: wrap;">
