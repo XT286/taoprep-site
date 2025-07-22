@@ -8,75 +8,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Inter', sans-serif;
+      background: #0f1d29;
       color: white;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,1 98,25 98,75 50,99 2,75 2,25" fill="none" stroke="%23005B8F" stroke-width="0.5"/></svg>');
+      background-size: 100px 100px;
     }
 
     header {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 60px 20px 40px;
+    }
+
+    header img {
+      height: 90px;
     }
 
     header h1 {
       font-size: 3em;
-      margin: 0;
       font-weight: 800;
+      margin: 0px 0 5px;
     }
 
     header p {
       font-size: 1.2em;
-      margin-top: 10px;
-      font-weight: 400;
-      opacity: 0.9;
+      opacity: 0.85;
     }
 
     .container {
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 1000px;
+      margin: 10px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .hex-card {
+      flex: 1;
+      min-width: 0;
+      height: 275px;
       background: rgba(255, 255, 255, 0.07);
       backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 30px 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
 
-    h2 {
-      font-size: 1.8em;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      padding-bottom: 12px;
-      margin-bottom: 24px;
+    .hex-card:hover {
+      background: rgba(102, 217, 239, 0.15);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #66d9efaa;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 20px 0;
+    .hex-card h3 {
+      margin-bottom: 10px;
       font-size: 1.2em;
     }
 
-    li a {
-      color: #66d9ef;
+    .hex-card a {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #005B8F;
+      border-radius: 6px;
       text-decoration: none;
+      color: white;
       font-weight: 600;
-      transition: all 0.2s ease;
+      transition: background-color 0.2s ease;
     }
 
-    li a:hover {
-      text-decoration: underline;
-      color: #a1ecff;
-    }
-
-    footer {
-      text-align: center;
-      margin: 60px 20px 30px;
-      font-size: 0.9em;
-      opacity: 0.8;
+    .hex-card a:hover {
+      background-color: #66d9ef;
+      color: #000;
     }
 
     footer {
@@ -95,13 +108,15 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2em;
+    @media (max-width: 900px) {
+      .container {
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      .container {
-        padding: 20px;
+      .hex-card {
+        width: 90%;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -109,21 +124,31 @@
 <body>
 
 <header>
+  <img src="images/taoprep-logo-white-small.png" alt="TaoPrep Logo">
   <h1>TaoPrep Education</h1>
   <p>Career Coaching | Interview Prep | Academic Tutoring</p>
 </header>
 
 <div class="container">
-  <h2>Our Services</h2>
-  <ul>
-    <li><a href="/techinterviewprep">Tech Interview Prep – Data Science & Machine Learning</a></li>
-    <li>College Math Tutoring (coming soon)</li>
-    <li><a href="https://drzhangacademy.com/">High School Math Olympiad Training</a></li>
-  </ul>
+  <div class="hex-card">
+    <h3>Tech Interview Prep</h3>
+    <p>DS & ML training with real case studies and mock sessions.</p>
+    <a href="/techinterviewprep">Explore</a>
+  </div>
+  <div class="hex-card">
+    <h3>Math Olympiad Prep</h3>
+    <p>Partnered with Dr. Zhang Academy for top-tier HS training.</p>
+    <a href="https://drzhangacademy.com/">Learn More</a>
+  </div>
+  <div class="hex-card">
+    <h3>College Math Tutoring</h3>
+    <p>Linear Algebra, Probability, Calculus (coming soon).</p>
+    <a href="#">Coming Soon</a>
+  </div>
 </div>
 
 <footer>
-  <p>© 2025 TaoPrep Education | Designed with care | <a href="mailto:xuntaohu.work@gmail.com">Contact</a> | <a href="https://www.linkedin.com/in/xuntao-hu/" target="_blank">LinkedIn</a></p>
+  <p>© 2025 TaoPrep Education | <a href="mailto:xuntaohu.work@gmail.com">Contact</a> | <a href="https://www.linkedin.com/in/xuntao-hu/" target="_blank">LinkedIn</a></p>
 </footer>
 
 </body>
